@@ -1,8 +1,8 @@
 library(tidyverse)
 
-#you gotta load the rdata from the specific rworkspace file within the data folder
+Happiness_Alcohol_Consumption <- read.csv("~/info201/project-vtrisha/data/HappinessAlcoholConsumption.csv")
 
-alcohol_vs_happiness <- HappinessAlcoholConsumption %>%
+alcohol_vs_happiness <- Happiness_Alcohol_Consumption %>%
   group_by(Country, HappinessScore, GDP_PerCapita) %>%
   summarize("total_alcohol_consumption" = sum(Beer_PerCapita, Spirit_PerCapita, Wine_PerCapita, na.rm = TRUE)) 
 
