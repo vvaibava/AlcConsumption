@@ -52,6 +52,7 @@ source("../source/Chart-1.R")
 alcohol_vs_happiness_scatterplot+ labs(x = 'Total Alcohol Consumption Per Capita (Beer, Spirits, Wine)', y = 'Happiness Score', title = 'Alcohol Consumption By Country vs Happiness Score')
 ```
 
+<<<<<<< HEAD
 This first chart shows a relationship between total alcohol consumption per capita versus the "Happiness Score" of any given country.
 There's no easy way to say this, but there's absolutely no relation between happiness and alcohol consumption. With a scatter plot it's easiest to see; you can say that there's a slow rising trend in happiness, but considering there are many other factors such as GDP per capita and ability to actually buy alcohol there's absolutely no relation between alcohol consumption and happiness score. The happiest countries are (usually) those with the most money, and thereby the ability to afford more alcohol to consume.
 
@@ -67,3 +68,10 @@ distribution_of_alcohol_use + labs(x = 'Amount of drinks consumed weekly', y = '
 ```
 
 This bar chart shows the distribution of students to how much they had to drink in any single week. This chart specifically shows that a common facet of cultural assumption, high schoolers drinking at an increased level compared to adults, is unfounded. This helps us to understand that the majority of students are not naturally alcoholics by circumstance of being students, and there are other factors that come into play when it comes to alcoholism rooting itself in students in high school.
+=======
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## Dynamic Paragraph
+
+Through the project we were able to figure out correlations through the different datasets and understand what they mean. Through the student alcohol data, we were able to see through the different variables that were calculated, such as age, absences, and grades, that student that drink more tend to do worse in their classes and are absent more.  Through the alcohol life expectancy, we can see, again through variables like beers, spirits, wine, and mean amount of alcohol (in liters), that there is a correlation between life expectancy and alcohol and the more people drink the lower their life expectancy gets. Finally, the happiness and alcohol consumption data told us that there is little to no correlation between the two, and that the two do not have an impact on each other. 
+>>>>>>> 04443116f21355ac2994ad5eda659cc0fbfcafc0
