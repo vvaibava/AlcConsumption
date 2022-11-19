@@ -47,8 +47,23 @@ summary(cars)
 
 You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r chart1, echo=FALSE}
+source("../source/Chart-1.R")
+alcohol_vs_happiness_scatterplot+ labs(x = 'Total Alcohol Consumption Per Capita (Beer, Spirits, Wine)', y = 'Happiness Score', title = 'Alcohol Consumption By Country vs Happiness Score')
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+This first chart shows a relationship between total alcohol consumption per capita versus the "Happiness Score" of any given country.
+There's no easy way to say this, but there's absolutely no relation between happiness and alcohol consumption. With a scatter plot it's easiest to see; you can say that there's a slow rising trend in happiness, but considering there are many other factors such as GDP per capita and ability to actually buy alcohol there's absolutely no relation between alcohol consumption and happiness score. The happiest countries are (usually) those with the most money, and thereby the ability to afford more alcohol to consume.
+
+```{r chart2, echo=FALSE}
+source("../source/Chart-2.R")
+life_expectancy_vs_alcohol_consumption + labs(x = 'Life Expectancy by Country', y = 'Total Pure Alcohol Consumption (in Liters)', title = 'Mapping Life Expectancy vs Total Alcohol Consumption in Liters by Country')
+```
+This chart once again shows, albeit inadvertently, a trend that we will come to hate. The fact that there are more factors than we can actually definitively study and draw a conclusion from that are affecting our perception of this chart. There are a variety of reasons why a country like Spain would have such high alcohol use while still having a high life expectancy, from cultural reasons as well as population statistics and even the quality of their healthcare. However, there is something important to note here: countries with incredibly high level of alcohol consumption, in excess of 11 liters, are not those with the highest life expectancy. Countries like Lithuania, Belarus, Grenada, these countries can have the best healthcare in the world and that still cannot fight the disastrous effects of alcohol use longterm. 
+
+```{r chart3, echo=FALSE}
+source("../source/Chart-3.R")
+distribution_of_alcohol_use + labs(x = 'Amount of drinks consumed weekly', y = 'Distribution of students', title = "Students and their weekly drinking habits") + theme_light()
+```
+
+This bar chart shows the distribution of students to how much they had to drink in any single week. This chart specifically shows that a common facet of cultural assumption, high schoolers drinking at an increased level compared to adults, is unfounded. This helps us to understand that the majority of students are not naturally alcoholics by circumstance of being students, and there are other factors that come into play when it comes to alcoholism rooting itself in students in high school.
