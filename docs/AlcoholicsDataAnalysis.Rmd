@@ -6,9 +6,9 @@ output: html_document
 ---
 
 ```{r echo=FALSE, eval=TRUE, message=FALSE}
-source("../source/Chart 3 - Distribution of students with amount of drinks consumed weekly.R")
-source("../source/Chart 2 - Alcohol Consumption vs Life Expectancy.R")
-source("../source/Chart 1 - Alcohol Consumption vs Happiness Score Scatterplot.R")
+source("../Chart-1.R")
+source("../source/Chart-2.R")
+source("../source/Chart-3.R")
 source("../source/summary_table.R")
 source("../source/summary_info.R")
 ```
@@ -19,7 +19,7 @@ Through the project we were able to figure out correlations through the differen
 
 ## Chart 1
 ``` {r, echo = FALSE, warning = FALSE}
-alcohol_vs_happiness_scatterplot
+alcohol_vs_happiness_scatterplot()
 ```
 
 There's no easy way to say this, but there's absolutely **no** relation between happiness and alcohol consumption. With a scatter plot it's easiest to see; you can say that there's a slow rising trend in happiness, but considering there are many other factors such as *GDP per capita* and ability to actually buy alcohol there's absolutely no relation between alcohol consumption and happiness score. The happiest countries are those with the *most* money, and thereby the ability to afford more alcohol to consume.
