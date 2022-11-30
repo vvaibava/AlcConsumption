@@ -6,14 +6,14 @@ output: html_document
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
-  echo = FALSE
+  echo = TRUE
 )
 ```
 
-```{r echo=FALSE, warning=FALSE, include=FALSE}
-source("../source/Chart-3.R")
-source("../source/Chart-2.R")
+```{r echo=FALSE, eval=TRUE, message=FALSE}
 source("../source/Chart-1.R")
+source("../source/Chart-2.R")
+source("../source/Chart-3.R")
 source("../source/summary_table.R")
 source("../source/summary_info.R")
 ```
@@ -33,7 +33,12 @@ There's no easy way to say this, but there's absolutely **no** relation between 
 
 ## Chart 2
 
+<<<<<<< HEAD
 ```{r chart2, echo=FALSE, warning=FALSE}
+=======
+```{r chart2, echo=FALSE}
+source("../source/Chart-2.R")
+>>>>>>> 4d6a75210b4b9cac0e4f1ffc21a0d009af61bd49
 life_expectancy_vs_alcohol_consumption + labs(x = 'Life Expectancy by Country', y = 'Total Pure Alcohol Consumption (in Liters)', title = 'Mapping Life Expectancy vs Total Alcohol Consumption in Liters by Country')
 ```
 
@@ -41,7 +46,12 @@ This chart once again shows, albeit inadvertently, a trend that we will come to 
 
 ## Chart 3 
 
+<<<<<<< HEAD
 ```{r chart3, echo=FALSE, warning=FALSE}
+=======
+```{r chart3, echo=FALSE}
+source("../source/Chart-3.R")
+>>>>>>> 4d6a75210b4b9cac0e4f1ffc21a0d009af61bd49
 distribution_of_alcohol_use + labs(x = 'Amount of drinks consumed weekly', y = 'Distribution of students', title = "Students and their weekly drinking habits") + theme_light()
 ```
 
