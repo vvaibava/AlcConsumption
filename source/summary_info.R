@@ -3,7 +3,7 @@ library(dplyr)
 
 #Alcohol Student Consumption
 
-alc_student_consumption <- read.csv("C:/Users/vvaib/Downloads/student-mat.csv")
+alc_student_consumption <- read.csv("~/info201/project-vtrisha/data/student_alcohol_consumption.csv")
 View(alc_student_consumption)
 
 summary_info_student <- list()
@@ -21,7 +21,7 @@ summary_info_student
 
 # Alcohol Life Expectancy
 
-alc_life_expectancy <- read.csv("C:/Users/vvaib/Downloads/drinks_solution.csv")
+alc_life_expectancy <- read.csv("~/info201/project-vtrisha/data/lifeexpectancy.csv")
 View(alc_life_expectancy)
 
 summary_info_expectancy <- list()
@@ -43,7 +43,7 @@ summary_info_expectancy
 
 #Happiness and Alcohol
 
-alc_happiness <- read.csv("C:/Users/vvaib/Downloads/HappinessAlcoholConsumption.csv")
+alc_happiness <- read.csv("~/info201/project-vtrisha/data/HappinessAlcoholConsumption.csv")
 View(alc_happiness)
 
 summary_info_happiness <- list()

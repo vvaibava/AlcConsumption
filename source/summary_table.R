@@ -3,7 +3,7 @@ library(tidyverse)
 library(tidyr)
 library(ggplot2)
 
-alc_happiness <- read.csv("C:/Users/vvaib/Downloads/HappinessAlcoholConsumption.csv")
+alc_happiness <- read.csv("~/info201/project-vtrisha/data/HappinessAlcoholConsumption.csv")
 View(alc_happiness)
 
 table_happiness <- function() {
