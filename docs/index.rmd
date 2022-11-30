@@ -137,7 +137,7 @@ This chart once again shows, albeit inadvertently, a trend that we will come to 
 
 ## Chart 3 
 
-```{r chart3, echo=FALSE, message=FALSE}
+```{r chart3, echo=FALSE, message=FALSE, warning=FALSE}
 distribution_of_alcohol_use + labs(x = 'Amount of drinks consumed weekly', y = 'Distribution of students', title = "Students and their weekly drinking habits") + theme_light()
 ```
 
