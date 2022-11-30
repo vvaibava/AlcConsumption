@@ -11,9 +11,9 @@ knitr::opts_chunk$set(
 ```
 
 ```{r echo=FALSE, eval=TRUE, message=FALSE}
-source("../source/Chart-3.R")
-source("../source/Chart-2.R")
 source("../source/Chart-1.R")
+source("../source/Chart-2.R")
+source("../source/Chart-3.R")
 source("../source/summary_table.R")
 source("../source/summary_info.R")
 ```
@@ -26,7 +26,6 @@ Through the project we were able to figure out correlations through the differen
 ## Chart 1
 
 ```{r chart1, echo=FALSE}
-source("../source/Chart-1.R")
 alcohol_vs_happiness_scatterplot+ labs(x = 'Total Alcohol Consumption Per Capita (Beer, Spirits, Wine)', y = 'Happiness Score', title = 'Alcohol Consumption By Country vs Happiness Score')
 ```
 
@@ -35,7 +34,6 @@ There's no easy way to say this, but there's absolutely **no** relation between 
 ## Chart 2
 
 ```{r chart2, echo=FALSE}
-source("../source/Chart-2.R")
 life_expectancy_vs_alcohol_consumption + labs(x = 'Life Expectancy by Country', y = 'Total Pure Alcohol Consumption (in Liters)', title = 'Mapping Life Expectancy vs Total Alcohol Consumption in Liters by Country')
 ```
 

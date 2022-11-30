@@ -10,7 +10,7 @@ GDP_vs_alcohol_consumption_scatterplot <- ggplot(alcohol_vs_happiness, aes(x = t
 
 GDP_vs_alcohol_consumption_scatterplot+ labs(x = 'Total Alcohol Consumption Per Capita (Beer, Spirits, Wine)', y = 'GDP Per Capita', title = 'Alcohol Consumption By Country vs GDP')
 
-alcohol_vs_happiness_scatterplot <- ggplot(alcohol_vs_happiness, aes(x = total_alcohol_consumption, y = HappinessScore)) + geom_point(shape=1)
+alcohol_vs_happiness_scatterplot <- ggplot(alcohol_vs_happiness, aes(x = total_alcohol_consumption, y = HappinessScore)) + geom_line()
   
 alcohol_vs_happiness_scatterplot+ labs(x = 'Total Alcohol Consumption Per Capita (Beer, Spirits, Wine)', y = 'Happiness Score', title = 'Alcohol Consumption By Country vs Happiness Score')
 
