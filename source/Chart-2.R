@@ -10,7 +10,7 @@ life_expectancy_with_alcohol_use <- country_life_expectancy %>%
   group_by(CountryDisplay) %>%
   summarize("life_expectancy_mean" = mean(Numeric)) %>%
   rename_at('CountryDisplay', ~'country') %>%
-  left_join(alcohol_consumption_by_country) %>%
+  left_join(alcohol_consumption_by_country, by = "country") %>%
   drop_na() %>%
   group_by(country) %>%
   select(country, life_expectancy_mean, total_litres_of_pure_alcohol)
