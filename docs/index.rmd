@@ -133,11 +133,10 @@ There's no easy way to say this, but there's absolutely **no** relation between 
 life_expectancy_vs_alcohol_consumption + labs(x = 'Life Expectancy by Country', y = 'Total Pure Alcohol Consumption (in Liters)', title = 'Mapping Life Expectancy vs Total Alcohol Consumption in Liters by Country')
 ```
 
-This chart once again shows, albeit inadvertently, a trend that we will come to hate. The fact that there are more factors than we can actually definitively study and draw a conclusion from that are affecting our perception of this chart. There are a variety of reasons why a country like Spain would have such high alcohol use while still having a high life expectancy, from **cultural reasons** as well as **population statistics** and even the quality of their healthcare. However, there is something important to note here: countries with incredibly high level of alcohol consumption, in excess of **11** liters, are not those with the highest life expectancy. Countries like Lithuania, Belarus, Grenada, these countries can have the best healthcare in the world and that still cannot fight the effects of alcoholism.
+This chart once again shows, albeit inadvertently, a trend that we will come to hate. The fact that there are more factors than we can actually definitively study and draw a conclusion from that are affecting our perception of this chart. We can observe that the relationship between alcohol consumed and the life expectancy of countries is overall a **direct relationship**. However, there is something important to note here: countries with incredibly high level of alcohol consumption, in excess of **11** liters, are not those with the highest life expectancy.
 
 ## Chart 3 
 
-<<<<<<< HEAD
 ```{r chart3, echo=FALSE, message=FALSE, warning=FALSE}
 distribution_of_alcohol_use + labs(x = 'Amount of drinks consumed weekly', y = 'Distribution of students', title = "Students and their weekly drinking habits") + theme_light()
 ```
