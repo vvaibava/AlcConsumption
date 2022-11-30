@@ -4,84 +4,63 @@ author: "Trisha, Lapi, Vaibava"
 date: "11/14/2022"
 output: html_document
 ---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE
+)
+```
 
 ```{r echo=FALSE, eval=TRUE, message=FALSE}
-source("../source/Chart 3 - Distribution of students with amount of drinks consumed weekly.R")
-source("../source/Chart 2 - Alcohol Consumption vs Life Expectancy.R")
-source("../source/Chart 1 - Alcohol Consumption vs Happiness Score Scatterplot.R")
+source("../source/Chart-3.R")
+source("../source/Chart-2.R")
+source("../source/Chart-1.R")
 source("../source/summary_table.R")
 source("../source/summary_info.R")
 ```
+
 
 ## Data Summary
 
 Through the project we were able to figure out correlations through the different datasets and understand what they mean. Through the student alcohol data, we were able to see through the different variables that were calculated, such as **age**, **absences**, and **grades**, that student that drink more tend to do worse in their classes and are absent more.  Through the alcohol life expectancy, we can see, again through variables like beers, spirits, wine, and *mean* amount of alcohol (in liters), that there is a correlation between life expectancy and alcohol and the more people drink the lower their life expectancy gets. Finally, the happiness and alcohol consumption data told us that there is **little to no correlation** between the two, and that the two do not have an impact on each other.
 
 ## Chart 1
-``` {r, echo = FALSE, warning = FALSE}
-alcohol_vs_happiness_scatterplot
+
+```{r chart1, echo=FALSE}
+source("../source/Chart-1.R")
+alcohol_vs_happiness_scatterplot+ labs(x = 'Total Alcohol Consumption Per Capita (Beer, Spirits, Wine)', y = 'Happiness Score', title = 'Alcohol Consumption By Country vs Happiness Score')
 ```
 
 There's no easy way to say this, but there's absolutely **no** relation between happiness and alcohol consumption. With a scatter plot it's easiest to see; you can say that there's a slow rising trend in happiness, but considering there are many other factors such as *GDP per capita* and ability to actually buy alcohol there's absolutely no relation between alcohol consumption and happiness score. The happiest countries are those with the *most* money, and thereby the ability to afford more alcohol to consume.
 life_expectancy_vs_alcohol_consumption
+
 ## Chart 2
-``` {r, echo = FALSE, warning = FALSE}
-life_expectancy_vs_alcohol_consumption
+
+```{r chart2, echo=FALSE}
+source("../source/Chart-2.R")
+life_expectancy_vs_alcohol_consumption + labs(x = 'Life Expectancy by Country', y = 'Total Pure Alcohol Consumption (in Liters)', title = 'Mapping Life Expectancy vs Total Alcohol Consumption in Liters by Country')
 ```
 
 This chart once again shows, albeit inadvertently, a trend that we will come to hate. The fact that there are more factors than we can actually definitively study and draw a conclusion from that are affecting our perception of this chart. There are a variety of reasons why a country like Spain would have such high alcohol use while still having a high life expectancy, from **cultural reasons** as well as **population statistics** and even the quality of their healthcare. However, there is something important to note here: countries with incredibly high level of alcohol consumption, in excess of **11** liters, are not those with the highest life expectancy. Countries like Lithuania, Belarus, Grenada, these countries can have the best healthcare in the world and that still cannot fight the effects of alcoholism.
 
 ## Chart 3 
 
-``` {r, echo = FALSE, warning = FALSE}
-distribution_of_alcohol_use
+```{r chart3, echo=FALSE}
+source("../source/Chart-3.R")
+distribution_of_alcohol_use + labs(x = 'Amount of drinks consumed weekly', y = 'Distribution of students', title = "Students and their weekly drinking habits") + theme_light()
 ```
 
 This bar chart shows the distribution of students to how much they had to drink in any single week. This chart specifically shows that a common facet of cultural assumption, high schoolers drinking at an **increased** level compared to adults, is unfounded. This helps us to understand that the majority of students are not naturally alcoholics by circumstance of being students, and there are **other factors** that come into play when it comes to alcoholism rooting itself in students in high school.
 
 ## Table 
 
-<<<<<<< HEAD
-``` {r, echo = FALSE, warning = FALSE}
-table_student()
+``` {r, echo = FALSE}
+library(knitr)
+kable(table_happiness())
 ```
 
-``` {r, echo = FALSE, warning = FALSE}
-table_life_expectancy()
-```
-=======
-```{r chart1, echo=FALSE}
-source("../source/Chart-1.R")
-alcohol_vs_happiness_scatterplot+ labs(x = 'Total Alcohol Consumption Per Capita (Beer, Spirits, Wine)', y = 'Happiness Score', title = 'Alcohol Consumption By Country vs Happiness Score')
-```
+The table we included above relates variables and analyze patterns regarding how alcoholism affects happiness within various regions. We utilized the **groupby()** function to create a table that compares the total amount of **Happiness Scores**, as well as the total **GDP score** within certain regions. For this table, we only took Happy Scores between 3 and 8, as well as GDP scores between 10,000 and 100,000. This allowed us to ignore irrelevant values. The table showed us that there is a high GDP and Happiness Score within the Western Europe and Sub-Sahara African regions. 
 
-<<<<<<< HEAD
-This first chart shows a relationship between total alcohol consumption per capita versus the "Happiness Score" of any given country.
-There's no easy way to say this, but there's absolutely no relation between happiness and alcohol consumption. With a scatter plot it's easiest to see; you can say that there's a slow rising trend in happiness, but considering there are many other factors such as GDP per capita and ability to actually buy alcohol there's absolutely no relation between alcohol consumption and happiness score. The happiest countries are (usually) those with the most money, and thereby the ability to afford more alcohol to consume.
+In this project, we were able to figure out correlations throughout the different data sets and understand what they mean. In the student alcohol data, we were able to see how students who consume more alcohol tend to do worse in class and have an increase in absences.Within the alcohol life expectancy data set, we can see that the more people consume alcohol, the lower their life expectancy gets. Finally, the happiness and alcohol consumption data show us that regions who consume more alcohol, tend to have a higher happiness score. 
 
-```{r chart2, echo=FALSE}
-source("../source/Chart-2.R")
-life_expectancy_vs_alcohol_consumption + labs(x = 'Life Expectancy by Country', y = 'Total Pure Alcohol Consumption (in Liters)', title = 'Mapping Life Expectancy vs Total Alcohol Consumption in Liters by Country')
-```
-This chart once again shows, albeit inadvertently, a trend that we will come to hate. The fact that there are more factors than we can actually definitively study and draw a conclusion from that are affecting our perception of this chart. There are a variety of reasons why a country like Spain would have such high alcohol use while still having a high life expectancy, from cultural reasons as well as population statistics and even the quality of their healthcare. However, there is something important to note here: countries with incredibly high level of alcohol consumption, in excess of 11 liters, are not those with the highest life expectancy. Countries like Lithuania, Belarus, Grenada, these countries can have the best healthcare in the world and that still cannot fight the disastrous effects of alcohol use longterm. 
-
-```{r chart3, echo=FALSE}
-source("../source/Chart-3.R")
-distribution_of_alcohol_use + labs(x = 'Amount of drinks consumed weekly', y = 'Distribution of students', title = "Students and their weekly drinking habits") + theme_light()
-```
-
-This bar chart shows the distribution of students to how much they had to drink in any single week. This chart specifically shows that a common facet of cultural assumption, high schoolers drinking at an increased level compared to adults, is unfounded. This helps us to understand that the majority of students are not naturally alcoholics by circumstance of being students, and there are other factors that come into play when it comes to alcoholism rooting itself in students in high school.
-=======
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
->>>>>>> cbb914f7c7fc268cb49234900e3c0558b040ad85
-
-``` {r, echo = FALSE, warning = FALSE}
-table_happiness()
-```
-
-<<<<<<< HEAD
-The three tables included above relate variables and analyze patterns regarding alcoholism within various countries. For example, we can see in the first table that there is a high correlation of individuals whos **Age, Studytime, Courses, and reputation** are affected by Alcohol Consumption. We also are able to notice that there is a high consumption with certain *middle eastern countries*. This is also backed by how there is a large amount of countries and states within the *northern hemisphere* who import large amounts of alcohol. 
-=======
-Through the project we were able to figure out correlations through the different datasets and understand what they mean. Through the student alcohol data, we were able to see through the different variables that were calculated, such as age, absences, and grades, that student that drink more tend to do worse in their classes and are absent more.  Through the alcohol life expectancy, we can see, again through variables like beers, spirits, wine, and mean amount of alcohol (in liters), that there is a correlation between life expectancy and alcohol and the more people drink the lower their life expectancy gets. Finally, the happiness and alcohol consumption data told us that there is little to no correlation between the two, and that the two do not have an impact on each other. 
->>>>>>> 04443116f21355ac2994ad5eda659cc0fbfcafc0
->>>>>>> cbb914f7c7fc268cb49234900e3c0558b040ad85
