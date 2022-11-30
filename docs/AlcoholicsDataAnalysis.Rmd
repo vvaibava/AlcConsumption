@@ -6,11 +6,11 @@ output: html_document
 ---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
-  echo = TRUE
+  echo = FALSE
 )
 ```
 
-```{r echo=FALSE, eval=TRUE, message=FALSE}
+```{r echo=FALSE, warning=FALSE, include=FALSE}
 source("../source/Chart-3.R")
 source("../source/Chart-2.R")
 source("../source/Chart-1.R")
@@ -26,7 +26,6 @@ Through the project we were able to figure out correlations through the differen
 ## Chart 1
 
 ```{r chart1, echo=FALSE}
-source("../source/Chart-1.R")
 alcohol_vs_happiness_scatterplot+ labs(x = 'Total Alcohol Consumption Per Capita (Beer, Spirits, Wine)', y = 'Happiness Score', title = 'Alcohol Consumption By Country vs Happiness Score')
 ```
 
@@ -35,7 +34,6 @@ There's no easy way to say this, but there's absolutely **no** relation between 
 ## Chart 2
 
 ```{r chart2, echo=FALSE}
-source("../source/Chart-2.R")
 life_expectancy_vs_alcohol_consumption + labs(x = 'Life Expectancy by Country', y = 'Total Pure Alcohol Consumption (in Liters)', title = 'Mapping Life Expectancy vs Total Alcohol Consumption in Liters by Country')
 ```
 
@@ -44,7 +42,6 @@ This chart once again shows, albeit inadvertently, a trend that we will come to 
 ## Chart 3 
 
 ```{r chart3, echo=FALSE}
-source("../source/Chart-3.R")
 distribution_of_alcohol_use + labs(x = 'Amount of drinks consumed weekly', y = 'Distribution of students', title = "Students and their weekly drinking habits") + theme_light()
 ```
 
