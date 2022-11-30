@@ -1,7 +1,0 @@
----
-title: "Alchoholics Data Analysis"
-author: "Trisha, Lapi, Vaibava"
-date: "2022-11-14"
-output: html_document
----
-
