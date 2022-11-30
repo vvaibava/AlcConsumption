@@ -7,7 +7,7 @@ alc_student_consumption <- read.csv("~/info201/project-vtrisha/data/student_alco
 View(alc_student_consumption)
 
 summary_info_student <- list()
-summary_info_student$num_observations <- nrow(alc_happiness)
+summary_info_student$num_observations <- nrow(alc_student_consumption)
 summary_info_student$max_age <- alc_student_consumption %>%
   filter(age == max(age, na.rm = T)) %>%
   select(age)
@@ -21,7 +21,7 @@ summary_info_student
 
 # Alcohol Life Expectancy
 
-alc_life_expectancy <- read.csv("~/info201/project-vtrisha/data/lifeexpectancy.csv")
+alc_life_expectancy <- read.csv("~/info201/project-vtrisha/data/drinks.csv")
 View(alc_life_expectancy)
 
 summary_info_expectancy <- list()
