@@ -10,15 +10,18 @@ chart3 <- source("~/info201/project-vtrisha/source/Chart-3.R")
 homepage <- tabPanel(
   "homepage",
   id = "home",
-  titlePanel("Alcohol Consumption, as viewed through many different contexts"),
+  titlePanel("Alcohol Consumption and its Effects, in a Variety of Contexts"),
   sidebarLayout(
     sidebarPanel(
-      p("test 1")
+      h3("Abstract"),
+      p("The main question that we are addressing through our project is when alcohol consumption becomes an issue and what the side effects to it are. This question is important because most people turn towards alcohol to have a “good” time, making alcoholism a huge problem in society today. To address the question, we plan to look at and analyze data from reliable sources."),
+      width = 5
     ),
     mainPanel(
-      p("test 2"),
-      img("", src = "https://cdn.websterslawyers.com.au/wp-content/uploads/media/2019/07/Alcoholism-iStock-186346257.jpg")
-    )
+      p("test picture but it goes kinda hard"),
+      img("", 
+          src = "https://3.bp.blogspot.com/-NIHjfBJqCgY/UJmUyvTLhnI/AAAAAAAAAhY/w5D1DY3UuVA/w1200-h630-p-k-no-nu/prevent+teenage+alcoholism.jpg"),
+          width = 5)
   )
 )
 
@@ -74,6 +77,7 @@ chart_three_page <- tabPanel(
 ui1 <- function() {
     
     navbarPage("",
+               homepage,
                chart_one_page,
                chart_two_page,
                chart_three_page)
