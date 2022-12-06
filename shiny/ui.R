@@ -10,7 +10,16 @@ chart3 <- source("~/info201/project-vtrisha/source/Chart-3.R")
 homepage <- tabPanel(
   "homepage",
   id = "home",
-  titlePanel("Alcohol Consumption, as viewed through many different contexts")
+  titlePanel("Alcohol Consumption, as viewed through many different contexts"),
+  sidebarLayout(
+    sidebarPanel(
+      p("test 1")
+    ),
+    mainPanel(
+      p("test 2"),
+      img("", src = "https://cdn.websterslawyers.com.au/wp-content/uploads/media/2019/07/Alcoholism-iStock-186346257.jpg")
+    )
+  )
 )
 
 chart_one_page <- tabPanel(
@@ -63,9 +72,10 @@ chart_three_page <- tabPanel(
  
    
 ui1 <- function() {
-  navbarPage(homepage,
-             chart_one_page,
-             chart_two_page,
-             chart_three_page)
+    
+    navbarPage("",
+               chart_one_page,
+               chart_two_page,
+               chart_three_page)
 }
 

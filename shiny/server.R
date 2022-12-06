@@ -7,7 +7,10 @@ chart2 <- source("~/info201/project-vtrisha/source/Chart-2.R")
 chart3 <- source("~/info201/project-vtrisha/source/Chart-3.R")
 
 Happiness_Alcohol_Consumption <- read.csv("~/info201/project-vtrisha/data/HappinessAlcoholConsumption.csv", stringsAsFactors = FALSE)
-  
+alcohol_consumption_by_country <- read.csv("~/info201/project-vtrisha/data/drinks.csv", stringsAsFactors = FALSE)
+country_life_expectancy <- read.csv("~/info201/project-vtrisha/data/lifeexpectancy.csv", stringsAsFactors = FALSE)
+
+
 server1 <- function(input, output) {
   
   output$plot1 <- renderPlot({
@@ -30,7 +33,29 @@ server1 <- function(input, output) {
               color = Country)
 
   })
+  
   output$plot2 <- renderPlot({
+    
+    life_expectancy_with_alcohol_use <- country_life_expectancy %>%
+      filter(SexDisplay == "Both sexes") %>%
+      filter(YearCode == max(YearCode)) %>%
+      select(CountryDisplay, Numeric) %>%
+      group_by(CountryDisplay) %>%
+      summarize("life_expectancy_mean" = mean(Numeric)) %>%
+      rename_at('CountryDisplay', ~'country') %>%
+      left_join(alcohol_consumption_by_country, by = "country") %>%
+      drop_na() %>%
+      group_by(country) %>%
+      select(country, life_expectancy_mean, total_litres_of_pure_alcohol) %>%
+      filter(country == input$country_input_chart_2)
+    
+      ggplot(life_expectancy_with_alcohol_use, 
+             aes(
+               y = total_litres_of_pure_alcohol, 
+               x = life_expectancy_mean,
+               color = country)) + stat_smooth(
+                 method = 'loess', 
+                 formula = 'y ~ x') + geom_point() + coord_cartesian()
     
   })
   output$plot3 <- renderPlot({
