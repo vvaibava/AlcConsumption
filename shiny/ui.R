@@ -8,7 +8,7 @@ chart3 <- source("~/info201/project-vtrisha/source/Chart-3.R")
 
 
 homepage <- tabPanel(
-  "homepage",
+  "Homepage",
   id = "home",
   titlePanel("Alcohol Consumption and its Effects, in a Variety of Contexts"),
   sidebarLayout(
@@ -27,7 +27,7 @@ homepage <- tabPanel(
 )
 
 project_page <- tabPanel(
-  "Project_Description_Page",
+  "Project Description",
   titlePanel("Description of our project:"),
     h3("Introduction"),
     p("Our project is focused on understanding who are most susceptible to becoming an alcoholic and comprehending the risks that come with becoming an alcoholic. We plan to analyze data from multiple reliable sources to try and answer our four main research questions. As more people turn towards alcohol to relieve their stress, this problem becomes more and more prevalent in society. Through our research for the project, we hope to show the risk factors (some temporary and some that last years) that come along with unhealthy amounts of alcohol consumption and why to avoid it. Through the data that we analyze we hope to help better human health."),
@@ -46,21 +46,39 @@ project_page <- tabPanel(
 
     h3("Research Questions"),
   
-    h4("When does alcohol consumption become a problem?"),
+    h5("When does alcohol consumption become a problem?"),
     p("While being a fairly broad question, understanding the point where drinking goes from a fun hobby to a social and medical problem is vital for understanding the problems of alcoholism as a whole."),
     
-    h4("What are some genetic predispositions or risk factors to alcoholism?"),
+    h5("What are some genetic predispositions or risk factors to alcoholism?"),
     p("Being able to understand risk factors and genetic predispositions to alcoholism will enable anyone to more broadly see the slippery slope of alcoholism and potential uncontrollable aspects of human biology (and psychology) that can lead to alcoholism."),
   
-    h4("Which age range is the most broadly affected by alcoholism?"),
+    h5("Which age range is the most broadly affected by alcoholism?"),
     p("This is a question that helps to give us an understanding of where alcoholism starts and tapers off (if at all). If we understand where it starts and where it ends, we can link that to other relevant ideas to determine the reasons that it starts and ends."),
   
-    h4("What ethnic or racial backgrounds are most harshly affected by alcoholism?"),
+    h5("What ethnic or racial backgrounds are most harshly affected by alcoholism?"),
     p("This is an uncomfortable question for some, but understanding that certain marginalized populations of ethnic and racial origin are unjustly affected by alcoholism when compared to others allows us to question further on the link between alcohol use/abuse and racial/ethnic lines (and especially question why it is there, if at all)."),
 )
 
+dataset_page <- tabPanel(
+  "Dataset Description",
+  titlePanel("Our Datasets"),
+  p("Our datasets are related to our current problem domain because we focus on 3 aspects of alcohol consumption: Happiness, Life Expectancy, and prevalence throughout the world. The happiness dataset compiles data that determines which people experience momentary happiness while drinking alcohol. We also refer to datasets that determine the average life expectancy of an alcoholic, and how these patterns vary from country to country. We will be able to visualize more complex ideas of where alcohol addiction originates. For example, learning about the happiness index, and the part it plays in one’s psychological mind will help us form conclusions or inferences on whether people will look towards alcohol. Consequently, we will be able to confront our research questions because these factors play a major role within why people begin to consume alcohol."),
+  p(tags$a(href = "https://www.kaggle.com/datasets/marcospessotto/happiness-and-alcohol-consumption",
+           "Happiness and Alcohol Consumption",
+           target ="_blank")),
+  p(tags$a(href = "https://data.world/databeats/alcohol-vs-life-expectancy/workspace/file?filename=Drinks_raw.csv",
+           "Alcohol vs Life Expectancy",
+           target ="_blank")),
+  p(tags$a(href = "https://data.world/data-society/student-alcohol-consumption",
+           "Student Alcohol Consumption",
+           target ="_blank")),
+  p("These datasets tackle the primary question of why people consume alcohol. They were obtained from 3 main sources: Kaggle, NHS Digital, and Data World. These are all credible sources that millions of people use throughout the world. The data goes through many firewall transactions per day, and it is sharply monitored by cyber security and data analysts. All 3 of the sources utilize Google Analytics to collect their data for their data sets. Users also collect data from other sources to create specific data sets and produce a proper visualization for their projects. Specifically, NHS Digital collects data from their partnerships with hospital care records, systems, and other forms of organization. Most of the collected data did not require any form of money since most of the collected data is the result of partnerships with organizations. Instead, most data analysts benefit from the data, since they are able to create visualizations and edits of the data."),
+  h2("Data Summary"),
+  p("Through the project we were able to figure out correlations through the different data sets and understand what they mean. Through the student alcohol data, we were able to see through the different variables that were calculated, such as age, absences**, and grades, that student that drink more tend to do worse in their classes and are absent more.  Through the alcohol life expectancy, we can see, again through variables like beers, spirits, wine, and mean amount of alcohol (in liters), that there is a correlation between life expectancy and alcohol and the more people drink the lower their life expectancy gets. Finally, the happiness and alcohol consumption data told us that there is little to no correlation between the two, and that the two do not have an impact on each other.")
+  )
+
 chart_one_page <- tabPanel(
-  "Chart_1_page",
+  "Chart 1",
   id = "chart1page",
   titlePanel("Happiness vs Alcohol Consumption"),
   sidebarLayout(
@@ -70,13 +88,14 @@ chart_one_page <- tabPanel(
                   choices = c(chart1$value$data$Country))
     ),
     mainPanel(
-      plotOutput("plot1")
+      plotOutput("plot1"),
+      p("There's no easy way to say this, but there's absolutely no relation between happiness and alcohol consumption. With a scatter plot it's easiest to see; you can say that there's a slow rising trend in happiness, but considering there are many other factors such as *GDP per capita* and ability to actually buy alcohol there's absolutely no relation between alcohol consumption and happiness score. The happiest countries are those with the *most* money, and thereby the ability to afford more alcohol to consume.")
     )
   )
 )
 
 chart_two_page <- tabPanel(
-  "Chart_2_page",
+  "Chart 2",
   id = "chart2page",
   titlePanel("Life Expectancy vs Alcohol Consumption"),
   sidebarLayout(
@@ -86,13 +105,14 @@ chart_two_page <- tabPanel(
                   choices = c(chart2$value$data$country))
     ),
     mainPanel(
-      plotOutput("plot2")
+      plotOutput("plot2"),
+      p("This chart once again shows, albeit inadvertently, a trend that we will come to hate. The fact that there are more factors than we can actually definitively study and draw a conclusion from that are affecting our perception of this chart. We can observe that the relationship between alcohol consumed and the life expectancy of countries is overall a direct relationship. However, there is something important to note here: countries with incredibly high level of alcohol consumption, in excess of 11 liters, are not those with the highest life expectancy.")
     )
   )
 )
   
 chart_three_page <- tabPanel(
-  "Chart_3_page",
+  "Chart 3",
   id = "chart3page",
   titlePanel("Weekly Alcohol Consumption of Students"),
   sidebarLayout(
@@ -102,7 +122,8 @@ chart_three_page <- tabPanel(
                   choices = c(chart3$value$data$Walc))
     ),
     mainPanel(
-      plotOutput("plot3")
+      plotOutput("plot3"),
+      p('This bar chart shows the distribution of students to how much they had to drink in any single week. This chart specifically shows that a common facet of cultural assumption, high schoolers drinking at an **increased** level compared to adults, is unfounded. This helps us to understand that the majority of students are not naturally alcoholics by circumstance of being students, and there are **other factors** that come into play when it comes to alcoholism rooting itself in students in high school.')
     )
   )
 )
@@ -112,6 +133,7 @@ ui1 <- function() {
     
     navbarPage("",
                homepage,
+               dataset_page,
                project_page,
                chart_one_page,
                chart_two_page,
