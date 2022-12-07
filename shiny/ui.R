@@ -17,12 +17,46 @@ homepage <- tabPanel(
       p("The main question that we are addressing through our project is when alcohol consumption becomes an issue and what the side effects to it are. This question is important because most people turn towards alcohol to have a “good” time, making alcoholism a huge problem in society today. To address the question, we plan to look at and analyze data from reliable sources."),
       width = 5
     ),
+    position = "left",
     mainPanel(
       p("test picture but it goes kinda hard"),
       img("", 
           src = "https://3.bp.blogspot.com/-NIHjfBJqCgY/UJmUyvTLhnI/AAAAAAAAAhY/w5D1DY3UuVA/w1200-h630-p-k-no-nu/prevent+teenage+alcoholism.jpg"),
-          width = 5)
+          width = 5),
   )
+)
+
+project_page <- tabPanel(
+  "Project_Description_Page",
+  titlePanel("Description of our project:"),
+    h3("Introduction"),
+    p("Our project is focused on understanding who are most susceptible to becoming an alcoholic and comprehending the risks that come with becoming an alcoholic. We plan to analyze data from multiple reliable sources to try and answer our four main research questions. As more people turn towards alcohol to relieve their stress, this problem becomes more and more prevalent in society. Through our research for the project, we hope to show the risk factors (some temporary and some that last years) that come along with unhealthy amounts of alcohol consumption and why to avoid it. Through the data that we analyze we hope to help better human health."),
+    
+    h3("Problem Domain"),
+    p("Our problem domain is centered around the idea of alcoholism within society, particularly how it affects a broader network of people’s work and social interactions. We also hope to identify major risk factors that could contribute to drinking by drawing upon our various data sets in an attempt to understand where, why, and how individuals start drinking."),
+  
+    h3("Human Values"),
+    p("Our problem domain is concerned with the current population of adults, those who gradually transition into greater responsibilities with less and less support in an ever-changing world. More adults are falling prey to the allure of alcohol as an escape from these stresses; we value the health of everyone affected by alcoholism, mental and physical, above anything else. We have, at the core of our project, love and acceptance for those people who feel the temptation to start drinking, and hope to understand the factors and variables guiding the slippery slope so as to understand better prevention and avoidance tactics."),
+  
+    h3("Stakeholders"),
+    p("The main stakeholders of the project are humans under the intense stress of life, those looking for an escape. Regardless of if they have experienced the pressures of alcoholism or not, this project hopes to convey the negative effects of alcohol (through the prevalence of data explaining its risk factors and harmful effects) and the importance of avoiding it. The indirect stakeholders of this project are friends, parents, researchers, anyone who hopes to understand the potential risk factors behind developing alcoholism and form preventative measures against these factors."),
+  
+    h3("Potential Benefits & Harms"),
+    p("The overall benefit of this project will be, with a combination of understanding the data and acting upon it, the betterment of human health across the world. A project such as this allows for harm just as much as benefit, however; harmful effects of this project develop when potential misinterpretation or misunderstanding of data leads researchers to focus on an entirely incorrect path of preventative measures. There is a responsibility on our shoulders to convey the data we have gathered in a way that can be understood by anyone who wishes to analyze it, and a responsibility to make sure our data comes from verifiable and reliable sources."),
+
+    h3("Research Questions"),
+  
+    h4("When does alcohol consumption become a problem?"),
+    p("While being a fairly broad question, understanding the point where drinking goes from a fun hobby to a social and medical problem is vital for understanding the problems of alcoholism as a whole."),
+    
+    h4("What are some genetic predispositions or risk factors to alcoholism?"),
+    p("Being able to understand risk factors and genetic predispositions to alcoholism will enable anyone to more broadly see the slippery slope of alcoholism and potential uncontrollable aspects of human biology (and psychology) that can lead to alcoholism."),
+  
+    h4("Which age range is the most broadly affected by alcoholism?"),
+    p("This is a question that helps to give us an understanding of where alcoholism starts and tapers off (if at all). If we understand where it starts and where it ends, we can link that to other relevant ideas to determine the reasons that it starts and ends."),
+  
+    h4("What ethnic or racial backgrounds are most harshly affected by alcoholism?"),
+    p("This is an uncomfortable question for some, but understanding that certain marginalized populations of ethnic and racial origin are unjustly affected by alcoholism when compared to others allows us to question further on the link between alcohol use/abuse and racial/ethnic lines (and especially question why it is there, if at all)."),
 )
 
 chart_one_page <- tabPanel(
@@ -78,6 +112,7 @@ ui1 <- function() {
     
     navbarPage("",
                homepage,
+               project_page,
                chart_one_page,
                chart_two_page,
                chart_three_page)
