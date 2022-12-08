@@ -21,11 +21,13 @@ server1 <- function(input, output) {
       summarize("total_alcohol_consumption" = sum(Beer_PerCapita, 
                                                   Spirit_PerCapita, 
                                                   Wine_PerCapita, 
-                                                  na.rm = TRUE))%>%
-      filter(Country == input$country_input_chart_1)
+                                                  na.rm = TRUE)) %>%
+      filter(Country %in% input$country_input_chart_1)
+    
     alcohol_vs_happiness <- Happiness_Alcohol_Consumption %>%
       group_by(Country, HappinessScore, GDP_PerCapita) %>%
       summarize("total_alcohol_consumption" = sum(Beer_PerCapita, Spirit_PerCapita, Wine_PerCapita, na.rm = TRUE))
+    
     alcohol_vs_happiness <- alcohol_vs_happiness %>% ungroup()
     alcohol_vs_happiness_scatterplot <- ggplot(alcohol_vs_happiness, aes(x = total_alcohol_consumption, y = HappinessScore, color = Country)) + 
       geom_point() + 
@@ -61,6 +63,8 @@ server1 <- function(input, output) {
   output$plot3 <- renderPlotly({
     alcohol_consumption_by_students <- student_alcohol_consumption %>%
       filter(age == input$age_input)%>%
+      filter(max(age) == max(input$age_input))%>%
+      filter(min(age)==min(input$age_input)) %>%
       select(Walc, age) %>%
       group_by(age)
     alcohol_consumption_by_students
@@ -69,7 +73,8 @@ server1 <- function(input, output) {
       labs(x = 'Amount of drinks consumed weekly',
            y = 'Distribution of students',
            title = "Students and their weekly drinking habits")
-    distribution_of_alcohol_use
+    filter(max(age) == max(input$age_input))%>%
+    filter(min(age)==min(input$age_input)) %>%
     return(distribution_of_alcohol_use)
     
   })

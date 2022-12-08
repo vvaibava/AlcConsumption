@@ -101,7 +101,8 @@ chart_one_page <- tabPanel(
     sidebarPanel(
       selectInput(inputId = "country_input_chart_1", 
                   label = "Country", 
-                  choices = c(chart1$value$data$Country))
+                  choices = c(chart1$value$data$Country),
+                  multiple = TRUE)
     ),
     mainPanel(
       plotlyOutput("plot1"),
