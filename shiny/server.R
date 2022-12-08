@@ -26,8 +26,9 @@ server1 <- function(input, output) {
     alcohol_vs_happiness <- Happiness_Alcohol_Consumption %>%
       group_by(Country, HappinessScore, GDP_PerCapita) %>%
       summarize("total_alcohol_consumption" = sum(Beer_PerCapita, Spirit_PerCapita, Wine_PerCapita, na.rm = TRUE))
-    alcohol_vs_happiness_scatterplot <- ggplot(alcohol_vs_happiness, aes(x = total_alcohol_consumption, y = HappinessScore, color = "country")) + 
-      geom_line() + 
+    alcohol_vs_happiness <- alcohol_vs_happiness %>% ungroup()
+    alcohol_vs_happiness_scatterplot <- ggplot(alcohol_vs_happiness, aes(x = total_alcohol_consumption, y = HappinessScore, color = Country)) + 
+      geom_point() + 
       labs(x = 'Total Alcohol Consumption Per Capita (Beer, Spirits, Wine)', 
                                             y = 'Happiness Score', 
                                             title = 'Alcohol Consumption By Country vs Happiness Score')

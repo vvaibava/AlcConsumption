@@ -47,16 +47,16 @@ project_page <- tabPanel(
 
     h3("Research Questions"),
   
-    h5("When does alcohol consumption become a problem?"),
+    h4("When does alcohol consumption become a problem?"),
     p("While being a fairly broad question, understanding the point where drinking goes from a fun hobby to a social and medical problem is vital for understanding the problems of alcoholism as a whole."),
     
-    h5("What are some genetic predispositions or risk factors to alcoholism?"),
+    h4("What are some genetic predispositions or risk factors to alcoholism?"),
     p("Being able to understand risk factors and genetic predispositions to alcoholism will enable anyone to more broadly see the slippery slope of alcoholism and potential uncontrollable aspects of human biology (and psychology) that can lead to alcoholism."),
   
-    h5("Which age range is the most broadly affected by alcoholism?"),
+    h4("Which age range is the most broadly affected by alcoholism?"),
     p("This is a question that helps to give us an understanding of where alcoholism starts and tapers off (if at all). If we understand where it starts and where it ends, we can link that to other relevant ideas to determine the reasons that it starts and ends."),
   
-    h5("What ethnic or racial backgrounds are most harshly affected by alcoholism?"),
+    h4("What ethnic or racial backgrounds are most harshly affected by alcoholism?"),
     p("This is an uncomfortable question for some, but understanding that certain marginalized populations of ethnic and racial origin are unjustly affected by alcoholism when compared to others allows us to question further on the link between alcohol use/abuse and racial/ethnic lines (and especially question why it is there, if at all)."),
 )
 
