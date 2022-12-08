@@ -14,23 +14,19 @@ country_life_expectancy <- read.csv("~/info201/project-vtrisha/data/lifeexpectan
 
 
 server1 <- function(input, output) {
-  
   output$plot1 <- renderPlotly({
     alcohol_vs_happiness <- Happiness_Alcohol_Consumption %>%
-      group_by(Country, HappinessScore, GDP_PerCapita) %>%
-      summarize("total_alcohol_consumption" = sum(Beer_PerCapita, 
-                                                  Spirit_PerCapita, 
-                                                  Wine_PerCapita, 
-                                                  na.rm = TRUE))%>%
-      filter(Country == input$country_input_chart_1)
-    alcohol_vs_happiness <- Happiness_Alcohol_Consumption %>%
-      group_by(Country, HappinessScore, GDP_PerCapita) %>%
-      summarize("total_alcohol_consumption" = sum(Beer_PerCapita, Spirit_PerCapita, Wine_PerCapita, na.rm = TRUE))
-    alcohol_vs_happiness_scatterplot <- ggplot(alcohol_vs_happiness, aes(x = total_alcohol_consumption, y = HappinessScore, color = "country")) + 
-      geom_line() + 
-      labs(x = 'Total Alcohol Consumption Per Capita (Beer, Spirits, Wine)', 
-                                            y = 'Happiness Score', 
-                                            title = 'Alcohol Consumption By Country vs Happiness Score')
+      select(Country, HappinessScore, Beer_PerCapita)%>%
+      distinct(Country, .keep_all = TRUE)%>%
+      group_by(HappinessScore, Beer_PerCapita)%>%
+      drop_na()
+    alcohol_vs_happiness
+    alcohol_vs_happiness_scatterplot <- ggplot(alcohol_vs_happiness, aes(x = HappinessScore, y = Beer_PerCapita)) + 
+      geom_line() +
+      labs(x = 'Happiness Score', 
+           y = 'Beer_PerCapita', 
+           title = 'Beer Consumption By Country vs Happiness Score')
+    alcohol_vs_happiness_scatterplot
     return(alcohol_vs_happiness_scatterplot)
     
   })
@@ -45,9 +41,10 @@ server1 <- function(input, output) {
       left_join(alcohol_consumption_by_country, by = "country") %>%
       drop_na() %>%
       group_by(country) %>%
-      select(country, life_expectancy_mean, total_litres_of_pure_alcohol, YearCode)
+      select(country, life_expectancy_mean, total_litres_of_pure_alcohol, YearCode)%>%
+      filter(YearCode == input$year_input)
     life_expectancy_with_alcohol_use
-    life_expectancy_vs_alcohol_consumption <- ggplot(life_expectancy_with_alcohol_use, aes(y = total_litres_of_pure_alcohol, x = life_expectancy_mean, color = YearCode)) + 
+    life_expectancy_vs_alcohol_consumption <- ggplot(life_expectancy_with_alcohol_use, aes(y = total_litres_of_pure_alcohol, x = life_expectancy_mean)) + 
       stat_smooth(method = 'loess', formula = 'y ~ x') + 
       geom_point() + 
       coord_cartesian() +
@@ -59,14 +56,13 @@ server1 <- function(input, output) {
 
   output$plot3 <- renderPlotly({
     alcohol_consumption_by_students <- student_alcohol_consumption %>%
-      filter(age == input$age_input)%>%
-      select(Walc, age) %>%
-      group_by(age)
+      select(Walc, age, reason) %>%
+      filter(reason == input$reason_input)%>%
+      group_by(Walc, age)
     alcohol_consumption_by_students
-    distribution_of_alcohol_use <- ggplot(student_alcohol_consumption, aes(x = Walc, y = age, fill = age)) +
-      geom_col() +
-      labs(x = 'Amount of drinks consumed weekly',
-           y = 'Distribution of students',
+    distribution_of_alcohol_use <- ggplot(alcohol_consumption_by_students, aes(x = age, y = Walc, fill = reason)) + geom_col() +
+      labs(x = 'Age of Students',
+           y = 'Weekly Alcohol Consumption',
            title = "Students and their weekly drinking habits")
     distribution_of_alcohol_use
     return(distribution_of_alcohol_use)
