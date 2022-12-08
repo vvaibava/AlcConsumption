@@ -157,7 +157,7 @@ chart_three_page <- tabPanel(
     )
   )
  
-project_page <- tabPanel(
+summary_page <- tabPanel(
   "Summary",
   titlePanel("Takeaways:"),
   h3("Alcohol and Happiness"),
@@ -179,6 +179,7 @@ ui1 <- function() {
                project_page,
                chart_one_page,
                chart_two_page,
-               chart_three_page)
+               chart_three_page,
+               summary_page)
 }
 
