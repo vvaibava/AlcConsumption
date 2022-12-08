@@ -83,7 +83,8 @@ project_page <- tabPanel(
       data leads researchers to focus on an entirely incorrect path of preventative measures.
       There is a responsibility on our shoulders to convey the data we have gathered in 
       a way that can be understood by anyone who wishes to analyze it, and a responsibility 
-      to make sure our data comes from verifiable and reliable sources.")
+      to make sure our data comes from verifiable and reliable sources."),
+
 )
 
   
@@ -139,19 +140,18 @@ chart_one_page <- tabPanel(
   titlePanel("Happiness vs Alcohol Consumption"),
   sidebarLayout(
     sidebarPanel(
-      selectInput(inputId = "country_input", 
-                  label = "Select a Country", 
-                  choices = c("Denmark", "Iceland")
-      )
+      p("There's no easy way to say this, but there's absolutely no relation between happiness and alcohol consumption. 
+        With a line plot it's easiest to see; you can say that there's a slow rising trend in happiness, 
+        but considering there are many other factors such as GDP per capita and ability to actually buy alcohol 
+        there's absolutely no relation between alcohol consumption and happiness score. 
+        The happiest countries are those with the *most* money, and thereby the ability to afford more 
+        alcohol to consume."),
+      width = 20,
     ),
     plot <- mainPanel(
       plotlyOutput(outputId = "plot1"),
-      p("There's no easy way to say this, but there's absolutely no relation between happiness and alcohol consumption. 
-        With a line plot it's easiest to see; you can say that there's a slow rising trend in happiness, 
-        but considering there are many other factors such as *GDP per capita* and ability to actually buy alcohol 
-        there's absolutely no relation between alcohol consumption and happiness score. 
-        The happiest countries are those with the *most* money, and thereby the ability to afford more 
-        alcohol to consume.")
+      width = 20,
+      length = 20
     )
   )
 )

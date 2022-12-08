@@ -21,7 +21,7 @@ server1 <- function(input, output) {
       group_by(HappinessScore, Beer_PerCapita)%>%
       drop_na()
     alcohol_vs_happiness
-    alcohol_vs_happiness_scatterplot <- ggplot(alcohol_vs_happiness, aes(x = HappinessScore, y = Beer_PerCapita)) + 
+    alcohol_vs_happiness_scatterplot <- ggplot(alcohol_vs_happiness, aes(x = HappinessScore, y = Beer_PerCapita, color = "country")) + 
       geom_line() +
       labs(x = 'Happiness Score', 
            y = 'Beer_PerCapita', 
@@ -64,8 +64,6 @@ server1 <- function(input, output) {
       labs(x = 'Age of Students',
            y = 'Weekly Alcohol Consumption',
            title = "Students and their weekly drinking habits")
-    distribution_of_alcohol_use
-    return(distribution_of_alcohol_use)
     
   })
 }
