@@ -36,9 +36,24 @@ server1 <- function(input, output) {
   })
   
   output$plot2 <- renderPlotly({
-    
-        
-
+    life_expectancy_with_alcohol_use <- country_life_expectancy %>%
+      select(CountryDisplay, Numeric, YearCode) %>%
+      group_by(CountryDisplay, YearCode) %>%
+      summarize("life_expectancy_mean" = mean(Numeric)) %>%
+      drop_na() %>%
+      rename_at('CountryDisplay', ~'country') %>%
+      left_join(alcohol_consumption_by_country, by = "country") %>%
+      drop_na() %>%
+      group_by(country) %>%
+      select(country, life_expectancy_mean, total_litres_of_pure_alcohol, YearCode)
+    life_expectancy_with_alcohol_use
+    life_expectancy_vs_alcohol_consumption <- ggplot(life_expectancy_with_alcohol_use, aes(y = total_litres_of_pure_alcohol, x = life_expectancy_mean, color = YearCode)) + 
+      stat_smooth(method = 'loess', formula = 'y ~ x') + 
+      geom_point() + 
+      coord_cartesian() +
+      labs(x = 'Life Expectancy by Country', y = 'Total Pure Alcohol Consumption (in Liters)', title = 'Mapping Life Expectancy vs Total Alcohol Consumption in Liters by Country')  
+    life_expectancy_vs_alcohol_consumption
+    return(life_expectancy_vs_alcohol_consumption)
     
   })
 

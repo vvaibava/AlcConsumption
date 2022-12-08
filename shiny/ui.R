@@ -120,12 +120,16 @@ chart_two_page <- tabPanel(
   titlePanel("Life Expectancy vs Alcohol Consumption"),
   sidebarLayout(
     sidebarPanel(
-      selectInput(
-        inputId = "country_input", 
-        label = "Select a Country", 
-        choices = c(chart2$value$data$country))
+      sliderInput(
+        inputId = "year_input",
+        label = "Select a Range of Years",
+        min = 1990,
+        max = 2013,
+        value = c(1990,2013),
+        sep = ""
+      )
     ),
-    mainPanel(
+    plot <- mainPanel(
       plotlyOutput(outputId = "plot2"),
       p("This chart once again shows, albeit inadvertently, a trend that we will come to hate. 
         The fact that there are more factors than we can actually definitively study and draw a 
@@ -137,6 +141,7 @@ chart_two_page <- tabPanel(
     )
   )
 )
+
   
 chart_three_page <- tabPanel(
   "Chart 3",
@@ -148,12 +153,12 @@ chart_three_page <- tabPanel(
         min = 15,
         max = 22,
         value = c(15,22)
-      ),
+      )
     ),
     plot <- mainPanel(
       plotlyOutput(outputId = "plot3"),
       p("This bar chart shows the distribution of students to how much they had to drink in any single week. This chart specifically shows that a common facet of cultural assumption, high schoolers drinking at an increased level compared to adults, is unfounded. This helps us to understand that the majority of students are not naturally alcoholics by circumstance of being students, and there are other factors that come into play when it comes to alcoholism rooting itself in students in high school. ")
-      ),
+      )
     )
   )
  
