@@ -157,7 +157,20 @@ chart_three_page <- tabPanel(
     )
   )
  
-   
+project_page <- tabPanel(
+  "Summary",
+  titlePanel("Takeaways:"),
+  h3("Alcohol and Happiness"),
+  p("Our first goal in this project was to figure out whether there was a correlation between happiness and alcohol. We can clearly see through the first chart that there is no correlation between the two."),
+  
+  h3("Alcohol and Life Expectancy"),
+  p("Our second goal in this project was to figure out whether there was a correlation between life expectancy and alcohol. Through the second chart we can see that there is a direct correlation between the two and that countries that consume more alcohol have a lower life expectancy."),
+  
+  h3("Alcohol and Students"),
+  p("Our third and final goal in this project was to figure out whether there was a correlation between student alcoholism and alcohol. We can clearly see through the third chart that there is no correlation between the two and that there are other circumstances that must come into play when looking at why students drink."),
+
+)
+
 ui1 <- function() {
     
     navbarPage("",
