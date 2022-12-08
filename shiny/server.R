@@ -4,13 +4,13 @@ library(tidyverse)
 library(plotly)
 library(ggplot2)
 
-chart1 <- source("~/info201/project-vtrisha/source/Chart-1.R")
-chart2 <- source("~/info201/project-vtrisha/source/Chart-2.R")
-chart3 <- source("~/info201/project-vtrisha/source/Chart-3.R")
+chart1 <- source("https://raw.githubusercontent.com/info201b-au2022/project-vtrisha/main/source/Chart-1.R")
+chart2 <- source("https://raw.githubusercontent.com/info201b-au2022/project-vtrisha/main/source/Chart-2.R")
+chart3 <- source("https://raw.githubusercontent.com/info201b-au2022/project-vtrisha/main/source/Chart-3.R")
 
-Happiness_Alcohol_Consumption <- read.csv("~/info201/project-vtrisha/data/HappinessAlcoholConsumption.csv", stringsAsFactors = FALSE)
-alcohol_consumption_by_country <- read.csv("~/info201/project-vtrisha/data/drinks.csv", stringsAsFactors = FALSE)
-country_life_expectancy <- read.csv("~/info201/project-vtrisha/data/lifeexpectancy.csv", stringsAsFactors = FALSE)
+Happiness_Alcohol_Consumption <- read.csv("https://raw.githubusercontent.com/info201b-au2022/project-vtrisha/main/data/HappinessAlcoholConsumption.csv", stringsAsFactors = FALSE)
+alcohol_consumption_by_country <- read.csv("https://raw.githubusercontent.com/info201b-au2022/project-vtrisha/main/data/drinks.csv", stringsAsFactors = FALSE)
+country_life_expectancy <- read.csv("https://raw.githubusercontent.com/info201b-au2022/project-vtrisha/main/data/lifeexpectancy.csv", stringsAsFactors = FALSE)
 
 
 server1 <- function(input, output) {

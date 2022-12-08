@@ -2,7 +2,7 @@ library(tidyverse)
 library(ggplot2)
 library(dplyr)
 
-student_alcohol_consumption <- read.csv("~/info201/project-vtrisha/data/student_alcohol_consumption.csv")
+student_alcohol_consumption <- read.csv("https://raw.githubusercontent.com/info201b-au2022/project-vtrisha/main/data/student_alcohol_consumption.csv")
 
 
 alcohol_consumption_by_students <- student_alcohol_consumption %>%

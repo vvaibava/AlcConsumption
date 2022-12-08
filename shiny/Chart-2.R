@@ -2,8 +2,10 @@ library(tidyverse)
 library(dplyr)
 library(ggplot2)
 
-alcohol_consumption_by_country <- read.csv("~/info201/project-vtrisha/data/drinks.csv")
-country_life_expectancy <- read.csv("~/info201/project-vtrisha/data/lifeexpectancy.csv")
+alcohol_consumption_by_country <- read.csv("https://raw.githubusercontent.com/info201b-au2022/project-vtrisha/main/data/drinks.csv")
+
+country_life_expectancy <- read.csv("https://raw.githubusercontent.com/info201b-au2022/project-vtrisha/main/data/lifeexpectancy.csv")
+
 
 life_expectancy_with_alcohol_use <- country_life_expectancy %>%
   select(CountryDisplay, Numeric, YearCode) %>%

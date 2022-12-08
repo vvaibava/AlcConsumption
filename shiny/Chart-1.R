@@ -3,8 +3,7 @@ library(dplyr)
 library(ggplot2)
 
 
-Happiness_Alcohol_Consumption <- read.csv("~/info201/project-vtrisha/data/HappinessAlcoholConsumption.csv")
-
+Happiness_Alcohol_Consumption <- read.csv("https://raw.githubusercontent.com/info201b-au2022/project-vtrisha/main/data/HappinessAlcoholConsumption.csv")
 
 
 alcohol_vs_happiness <- Happiness_Alcohol_Consumption %>%
