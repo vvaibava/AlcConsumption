@@ -4,7 +4,7 @@ library(ggplot2)
 
 
 Happiness_Alcohol_Consumption <- read.csv("https://raw.githubusercontent.com/info201b-au2022/project-vtrisha/main/data/HappinessAlcoholConsumption.csv")
-
+View(Happiness_Alcohol_Consumption)
 
 alcohol_vs_happiness <- Happiness_Alcohol_Consumption %>%
   select(Country, HappinessScore, Beer_PerCapita)%>%
