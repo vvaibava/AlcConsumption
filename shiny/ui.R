@@ -5,10 +5,6 @@ library(plotly)
 library(ggplot2)
 library(bslib)
 
-source("Chart-1.R")
-source("Chart-2.R")
-source("Chart-3.R")
-
 
 homepage <- tabPanel(
   "Homepage",
