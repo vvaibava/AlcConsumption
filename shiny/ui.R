@@ -5,9 +5,9 @@ library(plotly)
 library(ggplot2)
 library(bslib)
 
-chart1 <- source("https://raw.githubusercontent.com/info201b-au2022/project-vtrisha/main/shiny/Chart-1.R")
-chart2 <- source("https://raw.githubusercontent.com/info201b-au2022/project-vtrisha/main/source/Chart-2.R")
-chart3 <- source("https://raw.githubusercontent.com/info201b-au2022/project-vtrisha/main/source/Chart-3.R")
+source("Chart-1.R")
+source("Chart-2.R")
+source("Chart-3.R")
 
 
 homepage <- tabPanel(
