@@ -1,6 +1,6 @@
 # Alcohol Consumption Project
 
-*P01: Project Proposal*: [Project Proposal Title - Edit Me!](./docs/p01-proposal.md) 
+*Project Proposal*: [Project Proposal Title - Edit Me!](./docs/p01-proposal.md) 
 
 
 |Project Directories | Brief Description|
